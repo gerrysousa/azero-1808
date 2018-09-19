@@ -5,6 +5,10 @@ class Nav
     click_link 'Acessar'
   end
 
+  def vai_para_cadastro
+    click_link 'Cadastre-se'
+  end
+
   def menu_usuario
     within('.navbar') do
       return find('#userMenu')
