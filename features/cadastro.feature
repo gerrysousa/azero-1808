@@ -27,7 +27,7 @@ Esquema do Cenário: Tentativa de cadastro
 	Então devo ver a seguinte mensagem "<alerta>"
 
     Exemplos: 
-	  | nome  | email           | senha  | mensagem                                |
+	  | nome  | email           | senha  | alerta                                |
       | Gerry | testes          | 123456 | Email inválido.                         |
       | Gerry | gerry@teste.com |        | Senha não informada.                    |
       |       | gerry@teste.com | 123456 | Nome não informado.                     |
