@@ -1,3 +1,11 @@
+Before do
+  @home = HomePage.new
+  @login = LoginPage.new
+  @nav = Nav.new
+  @cadastro = CadastroPage.new
+end
+
+
 After('@logout') do
   @nav.sair
   wait_until_css('.swal2-modal')

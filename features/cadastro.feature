@@ -11,7 +11,7 @@ Contexto: Form de Cadastro
 @sprint1 @smoke1
 Cenário: Cadastro simples
 	
-	Quando faço o meu cadastro com
+	Quando faço o meu cadastro com:
 		| nome  | Gerry           |
 		| email | gerry@teste.com |
 		| senha | 123456          |
