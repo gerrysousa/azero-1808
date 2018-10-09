@@ -8,7 +8,7 @@ Funcionalidade: Cadastro do usuário
 Contexto: Form de Cadastro
         Dado que estou na página de cadastro
 
-@sprint1 @smoke1
+@sprint1 @smoke1 @logout
 Cenário: Cadastro simples
 	
 	Quando faço o meu cadastro com:

@@ -6,8 +6,11 @@ Dado('que estou na página de cadastro') do
   @nav.vai_para_cadastro
 end
 
-Quando("faço o meu cadastro com") do |table|
+Quando("faço o meu cadastro com:") do |table|
   @usuario = table.rows_hash
+
+  DAO.new.remover_usuario(@usuario[:email])
+
   @cadastro.faz_cadastro(@usuario[:nome], @usuario[:email], @usuario[:senha] )
 end
 
