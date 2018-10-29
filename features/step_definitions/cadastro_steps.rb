@@ -1,21 +1,23 @@
 require 'faker'
 
 Dado('que estou na página de cadastro') do
-  visit '/api/reset' # Gatenho
-  visit '/cadastre-se'
+  # cenario
+  @home.acessar
+  @nav.vai_para_cadastro
 end
 
-Quando('faço o meu cadastro com') do |table|
+Quando("faço o meu cadastro com:") do |table|
   @usuario = table.rows_hash
 
-  fill_in 'full-name', with: @usuario[:nome]
-  fill_in 'email', with: @usuario[:email]
-  fill_in 'password', with: @usuario[:senha]
+  DAO.new.remover_usuario(@usuario[:email])
 
-  click_button 'Cadastrar'
+  @cadastro.faz_cadastro(@usuario[:nome], @usuario[:email], @usuario[:senha] )
 end
 
-Então('devo ver a mensagem {string}') do |mensagem_alerta|
-  alerta = find('.s-alert-box')
-  expect(alerta).to have_content mensagem_alerta
+Então('devo ver a seguinte mensagem {string}') do |mensagem_alerta|
+    expect(@cadastro.msg_alerta).to eql mensagem_alerta
+end
+
+Então('devo ver a seguinte mensagem de {string}') do |mensagem_alerta|
+  expect(@cadastro.msg_alerta).to eql mensagem_alerta
 end

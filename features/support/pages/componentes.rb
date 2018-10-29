@@ -5,10 +5,18 @@ class Nav
     click_link 'Acessar'
   end
 
+  def vai_para_cadastro
+    click_link 'Cadastre-se'
+  end
+
   def menu_usuario
     within('.navbar') do
       return find('#userMenu')
     end
+  end
+
+  def vai_para_anuncio
+    click_link'Vender meu carro';
   end
 
   def sair
