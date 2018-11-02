@@ -16,11 +16,13 @@ Dado("esse veículo é blindado") do
 end
 
 Quando("faço anúncio deste veículo") do
-    find('#brand').find('option', text: @anuncio[0][:marca]).select_option
-    find("input[type=radio][value=#{ @anuncio[0][:modelo]}").click();
-    find('#version').set @anuncio[0][:versao]
-    find('#year').set @anuncio[0][:ano]
-    find('#price').set @anuncio[0][:preco]
+    @veiculo = @anuncio.first
+
+    find('#brand').find('option', text: @veiculo[:marca]).select_option
+    find("input[type=radio][value=#{ @veiculo[:modelo]}").click();
+    find('#version').set @veiculo[:versao]
+    find('#year').set @veiculo[:ano]
+    find('#price').set @veiculo[:preco]
     sleep 5
 end
 
