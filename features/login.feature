@@ -8,7 +8,7 @@ Funcionalidade: Login
     Contexto: Form de login
         Dado que eu acessei a página de login
 
-    @login @logout
+    @login_sucesso @logout
     Cenario: Login do usuário
 
         Quando faço login com:
@@ -17,7 +17,7 @@ Funcionalidade: Login
             | senha | 123456                    |
         Então sou autenticado com sucesso
 
-    @tentativa_login
+    @falha
     Esquema do Cenario: Tentar logar
 
         Quando faço login com:
@@ -26,9 +26,9 @@ Funcionalidade: Login
         Então devo ver a seguinte mensagem de "<alerta>"
 
         Exemplos: 
-        | email                     | senha  | alerta                        |
-        | padre.kevedo@nokziste.org | 123456 | Usuário e/ou senha inválidos. |
-        | eu@papito.io              | xyz123 | Usuário e/ou senha inválidos. |
-        | eu@papito.com             |        | Senha não informada.          |
-        |                           | 123456 | Email não informado.          |
-        | teste#teste.com           | 123456 | Email inválido.               |
+            | email                     | senha  | alerta                        |
+            | padre.kevedo@nokziste.org | 123456 | Usuário e/ou senha inválidos. |
+            | eu@papito.io              | xyz123 | Usuário e/ou senha inválidos. |
+            | eu@papito.com             |        | Senha não informada.          |
+            |                           | 123456 | Email não informado.          |
+            | teste#teste.com           | 123456 | Email inválido.               |      

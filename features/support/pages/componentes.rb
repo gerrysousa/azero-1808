@@ -16,7 +16,7 @@ class Nav
   end
 
   def vai_para_anuncio
-    click_link'Vender meu carro';
+    click_link'Vender meu Carro';
   end
 
   def sair

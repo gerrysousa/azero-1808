@@ -8,7 +8,7 @@ Funcionalidade: Cadastro do usuário
 Contexto: Form de Cadastro
         Dado que estou na página de cadastro
 
-@sprint1 @smoke1 @logout
+@cadastro_sucesso @logout
 Cenário: Cadastro simples
 	
 	Quando faço o meu cadastro com:
@@ -17,19 +17,19 @@ Cenário: Cadastro simples
 		| senha | 123456          |
 	Então sou autenticado com sucesso
 
-@temp
+@falha
 Esquema do Cenário: Tentativa de cadastro
 	# Dado que estou na página de cadastro
 	Quando faço o meu cadastro com:
 		| nome  | <nome>  |
 		| email | <email> |
 		| senha | <senha> |
-	Então devo ver a seguinte mensagem "<alerta>"
+	Então devo ver a seguinte mensagem de "<alerta>"
 
     Exemplos: 
-	  | nome  | email           | senha  | alerta                                |
-      | Gerry | testes          | 123456 | Email inválido.                         |
-      | Gerry | gerry@teste.com |        | Senha não informada.                    |
-      |       | gerry@teste.com | 123456 | Nome não informado.                     |
-      | Gerry | gerry@teste.com | 12345  | Senha deve ter pelo menos 6 caracteres. |
+		| nome  | email           | senha  | alerta                                  |
+		| Gerry | testes          | 123456 | Email inválido.                         |
+		| Gerry | gerry@teste.com |        | Senha não informada.                    |
+		|       | gerry@teste.com | 123456 | Nome não informado.                     |
+		| Gerry | gerry@teste.com | 12345  | Senha deve ter pelo menos 6 caracteres. |
 

@@ -9,7 +9,7 @@ Funcionalidade: Anunciar meu carro
         Dado que acessei o formulario de anuncios de veiculos
 
 
-    @temp1
+    @login @temp1
     Cenário: Criar anúncio
 
         E que possuo o seguinte veículo
