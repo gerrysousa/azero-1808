@@ -3,6 +3,7 @@ Before do
   @login = LoginPage.new
   @nav = Nav.new
   @cadastro = CadastroPage.new
+  @anuncio_page = AnunciarPage.new
 end
 
 Before('@login') do
