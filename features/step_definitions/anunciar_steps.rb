@@ -17,17 +17,11 @@ end
 
 Quando("faço anúncio deste veículo") do
     @veiculo = @anuncio.first
-
-    find('#brand').find('option', text: @veiculo[:marca]).select_option
-    find("input[type=radio][value=#{ @veiculo[:modelo]}").click();
-    find('#version').set @veiculo[:versao]
-    find('#year').set @veiculo[:ano]
-    find('#price').set @veiculo[:preco]
-    sleep 5
+    @anuncio_page.novo(@veiculo)
 end
 
 Então("vejo a seguinte mensagem de sucesso:") do |mensagem_sucesso|
-    pending # Write code here that turns the phrase above into concrete actions
+    expect(@swal.mensagem).to have_content mensagem_sucesso
 end
   
 Então("vejo a seguinte mensagem de alerta:") do |mensagem_alerta|
@@ -35,5 +29,5 @@ Então("vejo a seguinte mensagem de alerta:") do |mensagem_alerta|
 end
   
 Então("vejo a seguinte mensagem de sucesso") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+   expect(@swal.mensagem).to have_content string
 end

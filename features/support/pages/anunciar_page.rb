@@ -3,12 +3,19 @@ class AnunciarPage
     include Capybara::DSL
 
     def novo(veiculo)
+        puts('entrou metodo novo veiculo')
+        puts(veiculo)
         seleciona_marca(veiculo[:marca])
-        escolhe_modelo(veiculo[:marca])
-        find('#version').set @veiculo[:versao]
-        find('#year').set @veiculo[:ano]
-        find('#price').set @veiculo[:preco]find()
+        escolhe_modelo(veiculo[:modelo])
+
+        find('#version').set veiculo[:versao]
+        find('#year').set veiculo[:ano]
+        find('#price').set veiculo[:preco]
+
+        find('#sell-my-car').click
     end
+
+    private 
 
     def seleciona_marca(marca)
         find('#brand').find('option', text: marca).select_option
@@ -18,8 +25,5 @@ class AnunciarPage
         find("input[type=radio][value=#{modelo}").click();
     end
 
-    find('#brand').find('option', text: @veiculo[:marca]).select_option
-    find("input[type=radio][value=#{ @veiculo[:modelo]}").click();
-    find('#version').set @veiculo[:versao]
-    find('#year').set @veiculo[:ano]
-    find('#price').set @veiculo[:preco]
+end
+  
