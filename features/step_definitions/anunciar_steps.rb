@@ -12,22 +12,14 @@ Dado("eu já cadastrei esse anúncio anteriormente") do
 end
   
 Dado("esse veículo é blindado") do
-   pending # Write code here that turns the phrase above into concrete actions
+   @blindado = true
 end
 
 Quando("faço anúncio deste veículo") do
     @veiculo = @anuncio.first
-    @anuncio_page.novo(@veiculo)
+    @anuncio_page.novo(@veiculo, @blindado)
 end
 
-Então("vejo a seguinte mensagem de sucesso:") do |mensagem_sucesso|
-    expect(@swal.mensagem).to have_content mensagem_sucesso
-end
-  
-Então("vejo a seguinte mensagem de alerta:") do |mensagem_alerta|
-    pending # Write code here that turns the phrase above into concrete actions
-end
-  
-Então("vejo a seguinte mensagem de sucesso") do |string|
-   expect(@swal.mensagem).to have_content string
+Então("vejo a seguinte mensagem:") do |mensagem|
+    expect(@swal.mensagem.text).to eql mensagem
 end

@@ -9,18 +9,30 @@ Funcionalidade: Anunciar meu carro
         Dado que acessei o formulario de anuncios de veiculos
 
 
-    @login @temp1
+    @login 
     Cenário: Criar anúncio
 
         E que possuo o seguinte veículo
             | marca     | modelo | versao  | ano  | preco      |
             | Chevrolet | Camaro | Blue 79 | 1979 | 250.000,00 |
         Quando faço anúncio deste veículo
-        Então vejo a seguinte mensagem de sucesso: 
+        Então vejo a seguinte mensagem: 
         """
         Parabéns. Seu carro foi anunciado com sucesso.
         """
-    
+    @login @temp1
+    Cenário: Carro blindado
+
+        E que possuo o seguinte veículo
+          | marca | modelo | versao | ano  | preco     |
+          | Honda | Fit    | CVT    | 2010 | 30.000,00 |
+        E esse veículo é blindado
+        Quando faço anúncio deste veículo
+        Então vejo a seguinte mensagem: 
+        """
+        Não anunciamos carros blindados.
+        """
+
     Cenário: Anúncio duplicado
 
         E que possuo o seguinte veículo
@@ -28,19 +40,9 @@ Funcionalidade: Anunciar meu carro
             | Ford  | Fusion | 2.4 automático | 2016 | 70.000,00 |
         Mas eu já cadastrei esse anúncio anteriormente
         Quando faço anúncio deste veículo
-        Então vejo a seguinte mensagem de alerta:
+        Então vejo a seguinte mensagem: 
         """
         Este anúncio já está cadastrado.
         """
 
-    Cenário: Carro blindado
-
-        E que possuo o seguinte veículo
-            | marca     | modelo | versao  | ano  | preco      |
-            | Chevrolet | Camaro | Blue 79 | 1979 | 250.000,00 |
-        E esse veículo é blindado
-        Quando faço anúncio deste veículo
-        Então vejo a seguinte mensagem de sucesso
-        """
-        Não anunciamos carros blindados.
-        """
+    
