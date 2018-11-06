@@ -9,7 +9,7 @@ Funcionalidade: Anunciar meu carro
         Dado que acessei o formulario de anuncios de veiculos
 
 
-    @login 
+    @login @logout
     Cenário: Criar anúncio
 
         E que possuo o seguinte veículo
@@ -20,7 +20,7 @@ Funcionalidade: Anunciar meu carro
         """
         Parabéns. Seu carro foi anunciado com sucesso.
         """
-    @login
+    @login @logout
     Cenário: Carro blindado
 
         E que possuo o seguinte veículo
@@ -33,7 +33,7 @@ Funcionalidade: Anunciar meu carro
         Não anunciamos carros blindados.
         """
 
-    @login @temp1
+    @login @logout
     Cenário: Anúncio duplicado
 
         E que possuo o seguinte veículo

@@ -14,7 +14,8 @@ Before('@login') do
 end
 
 After('@logout') do
-  @nav.sair
+  #@nav.sair
+  visit '/sair'
   wait_until_css('.swal2-modal')
 end
 
