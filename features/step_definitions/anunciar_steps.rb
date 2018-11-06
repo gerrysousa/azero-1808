@@ -9,7 +9,10 @@ Dado("que possuo o seguinte veículo") do |table|
 end
   
 Dado("eu já cadastrei esse anúncio anteriormente") do
-    pending # Write code here that turns the phrase above into concrete actions
+    @veiculo = @anuncio.first
+    @anuncio_page.novo(@veiculo, @blindado)
+    @swal.ok
+    @nav.vai_para_anuncio
 end
   
 Dado("esse veículo é blindado") do

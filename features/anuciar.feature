@@ -43,7 +43,7 @@ Funcionalidade: Anunciar meu carro
         Quando faço anúncio deste veículo
         Então vejo a seguinte mensagem: 
         """
-        Este anúncio já está cadastrado.
+        Este anúncio já foi cadastrado.
         """
 
     

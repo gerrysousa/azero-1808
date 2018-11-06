@@ -31,4 +31,8 @@ class SweetAlert
   def mensagem
     find('#swal2-content')
   end
+
+  def ok
+    click_button 'OK'
+  end
 end
