@@ -20,7 +20,7 @@ Funcionalidade: Anunciar meu carro
         """
         Parabéns. Seu carro foi anunciado com sucesso.
         """
-    @login @temp1
+    @login
     Cenário: Carro blindado
 
         E que possuo o seguinte veículo
@@ -33,6 +33,7 @@ Funcionalidade: Anunciar meu carro
         Não anunciamos carros blindados.
         """
 
+    @login @temp1
     Cenário: Anúncio duplicado
 
         E que possuo o seguinte veículo

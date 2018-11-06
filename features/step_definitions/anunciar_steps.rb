@@ -4,7 +4,8 @@ Dado("que acessei o formulario de anuncios de veiculos") do
 
  
 Dado("que possuo o seguinte veículo") do |table|
-    @anuncio = table.hashes    
+    @anuncio = table.hashes 
+    DAO.new.remover_veiculo(@anuncio.first)   
 end
   
 Dado("eu já cadastrei esse anúncio anteriormente") do
