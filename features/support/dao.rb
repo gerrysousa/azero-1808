@@ -6,6 +6,7 @@ class DAO
     Mongo::Logger.logger = Logger.new('log/mongo.log')
 
     def remover_usuario(email)
+        puts email
         usuarios =  client[:users]
         usuarios.delete_one{'profile.email'== email}
     end

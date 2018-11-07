@@ -8,12 +8,12 @@ Funcionalidade: Cadastro do usuário
 Contexto: Form de Cadastro
         Dado que estou na página de cadastro
 
-@cadastro_sucesso @logout
+@cadastro_sucesso @smoke
 Cenário: Cadastro simples
 	
 	Quando faço o meu cadastro com:
-		| nome  | Gerry           |
-		| email | gerry@teste.com |
+		| nome  | UserName           |
+		| email | user@teste.com |
 		| senha | 123456          |
 	Então sou autenticado com sucesso
 

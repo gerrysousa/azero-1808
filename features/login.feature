@@ -8,7 +8,7 @@ Funcionalidade: Login
     Contexto: Form de login
         Dado que eu acessei a página de login
 
-    @login_sucesso @logout
+    @login_sucesso @smoke
     Cenario: Login do usuário
 
         Quando faço login com:

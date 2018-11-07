@@ -3,8 +3,8 @@ class AnunciarPage
     include Capybara::DSL
 
     def novo(veiculo, blindado)
-        puts('entrou metodo novo veiculo')
-        puts(veiculo)
+        # puts('entrou metodo novo veiculo')
+        # puts(veiculo)
         seleciona_marca(veiculo[:marca])
         escolhe_modelo(veiculo[:modelo])
 
