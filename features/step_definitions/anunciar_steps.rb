@@ -26,5 +26,5 @@ end
 
 Então("vejo a seguinte mensagem:") do |mensagem|
     expect(@swal.mensagem.text).to eql mensagem
-    # @swal.ok
+    @swal.ok
 end
