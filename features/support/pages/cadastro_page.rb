@@ -1,17 +1,19 @@
 class CadastroPage
-    include Capybara::DSL
-  
-    def faz_cadastro(nome, email, senha)     
-      find('input[placeholder=Email]').set email
-      find('#fullName').set nome  
-      find('input[type=password]').set senha
-      click_button 'Cadastrar'
-    end
-  
-    def msg_alerta
-      within('form[class=form-center]') do
-        return find('.alert').text
-      end
-    end
+  include Capybara::DSL
+
+  def visita
+    visit '/cadastre-se'
   end
-  
+
+  def novo(usuario)
+    fill_in 'fullName', with: usuario[:nome]
+    fill_in 'email', with: usuario[:email]
+    fill_in 'password', with: usuario[:senha]
+
+    click_button 'Cadastrar'
+  end
+
+  def alerta
+    find('.alert')
+  end
+end

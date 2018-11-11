@@ -9,6 +9,6 @@ Quando('faço login com:') do |table|
   @login.faz_login(@usuario[:email], @usuario[:senha])
 end
 
-Então('devo ver a seguinte mensagem {string}') do |mensagem_alerta|
+Então("devo ver a seguinte mensagem de {string}") do |mensagem_alerta|
   expect(@login.msg_alerta).to eql mensagem_alerta
 end

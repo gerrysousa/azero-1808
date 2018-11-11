@@ -5,6 +5,7 @@ Before do
   @cadastro = CadastroPage.new
   @anuncio_page = AnunciarPage.new
   @swal = SweetAlert.new
+  @cadastro_page = CadastroPage.new
 
   # page.current_window.resize_to(1366,768)
 end

@@ -17,7 +17,7 @@ Funcionalidade: Login
             | senha | 123456                    |
         Então sou autenticado com sucesso
 
-    @falha
+    @falha1
     Esquema do Cenario: Tentar logar
 
         Quando faço login com:

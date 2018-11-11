@@ -11,20 +11,20 @@ Contexto: Form de Cadastro
 @cadastro_sucesso @smoke
 Cenário: Cadastro simples
 	
-	Quando faço o meu cadastro com:
-		| nome  | UserName           |
-		| email | user@teste.com |
-		| senha | 123456          |
+	Quando faço o meu cadastro com
+		| nome  | UserName                 |
+		| email | user@teste.com.br |
+		| senha | 123456                   |
 	Então sou autenticado com sucesso
 
 @falha
 Esquema do Cenário: Tentativa de cadastro
-	# Dado que estou na página de cadastro
-	Quando faço o meu cadastro com:
+	#Dado que estou na página de cadastro
+	Quando faço o meu cadastro com
 		| nome  | <nome>  |
 		| email | <email> |
 		| senha | <senha> |
-	Então devo ver a seguinte mensagem de "<alerta>"
+	Então devo ver a mensagem "<alerta>"
 
     Exemplos: 
 		| nome  | email           | senha  | alerta                                  |
