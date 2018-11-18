@@ -27,3 +27,21 @@ docker run -d -p 4444:4444 -p 59000:59000 selenium/standalone-chrome-debug
 #Executando testes do ci
 * cucumber -t @smoke -p ci
 
+----------------------------------------------
+#Subir o Jenkins local
+On Windows
+Open up a command prompt window.
+
+Download the jenkinsci/blueocean image and run it as a container in Docker using the following docker run command:
+
+docker run ^
+  -u root ^
+  --rm ^
+  -d ^
+  -p 8080:8080 ^
+  -p 50000:50000 ^
+  -v jenkins-data:/var/jenkins_home ^
+  -v /var/run/docker.sock:/var/run/docker.sock ^
+  jenkinsci/blueocean
+----------------------------------------------
+
